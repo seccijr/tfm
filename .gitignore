@@ -1,0 +1,6 @@
+data/
+saved/
+log/
+venv/
+.idea/
+.ipynb_checkpoints/
