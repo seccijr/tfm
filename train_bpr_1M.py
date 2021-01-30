@@ -9,7 +9,7 @@ config_dict = {
     'data_path': 'data',
     'epochs': 5,
     'load_col': {
-        'inter': ['user_id', 'item_id', 'click', 'timestamp'],
+        'inter': ['user_id', 'item_id', 'click', 'timestamp', 'neg_item_id'],
         'kg': ['head_id', 'relation_id', 'tail_id'],
         'link': ['item_id', 'entity_id']
     },
@@ -19,7 +19,7 @@ config_dict = {
     },
     'eval_setting': 'RO_RS,'
 }
-saved = False
+saved = True
 
 config = Config(model=model, dataset=dataset, config_file_list=[], config_dict=config_dict)
 init_seed(config['seed'], config['reproducibility'])

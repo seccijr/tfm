@@ -14,7 +14,7 @@ config_dict = {
         'link': ['item_id', 'entity_id']
     }
 }
-saved = False
+saved = True
 
 config = Config(model=model, dataset=dataset, config_file_list=[], config_dict=config_dict)
 init_seed(config['seed'], config['reproducibility'])
