@@ -1,0 +1,15 @@
+dataset: mind_small_dev
+model: RippleNet
+seed: 5678
+state: DEBUG
+reproducibility: True
+data_path: models\\data
+checkpoint_dir: models\\saved
+epochs: 10
+eval_setting: RO_RS,pop100
+metrics:
+  - AUC
+  - MAE
+  - RMSE
+  - LogLoss
+topk: 5  # We randomly sampled 1 million users who had at least 5 news click records
