@@ -1,4 +1,4 @@
-dataset: mind_small_dev
+dataset: mind_small_positive
 model: MKR
 seed: 5678
 state: DEBUG
