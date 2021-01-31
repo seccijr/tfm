@@ -4,7 +4,7 @@ from recbole.quick_start import objective_function
 
 hp = HyperTuning(
     objective_function=objective_function, algo='exhaustive',
-    params_file='models\\pointwise\\mkr.test', fixed_config_file_list=['models\\pointwise\\mkr.yaml']
+    params_file='models\\pointwise\\Knowledge\\mkr.test', fixed_config_file_list=['models\\pointwise\\Knowledge\\mkr.yaml']
 )
 
 # run

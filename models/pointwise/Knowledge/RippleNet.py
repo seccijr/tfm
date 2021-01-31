@@ -4,7 +4,7 @@ from recbole.quick_start import objective_function
 
 hp = HyperTuning(
     objective_function=objective_function, algo='exhaustive',
-    params_file='models\\pointwise\\RippleNet.test', fixed_config_file_list=['models\\pointwise\\RippleNet.yaml']
+    params_file='models\\pointwise\\Knowledge\\RippleNet.test', fixed_config_file_list=['models\\pointwise\\Knowledge\\RippleNet.yaml']
 )
 
 # run

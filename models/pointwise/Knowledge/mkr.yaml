@@ -5,7 +5,7 @@ state: DEBUG
 reproducibility: True
 data_path: models\\data
 checkpoint_dir: models\\saved
-epochs: 10
+epochs: 1
 eval_setting: RO_RS,pop100
 metrics:
   - AUC
