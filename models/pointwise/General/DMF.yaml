@@ -1,0 +1,16 @@
+dataset: mind_small_dev
+model: DMF
+seed: 5678
+state: DEBUG
+reproducibility: True
+data_path: models\\data
+checkpoint_dir: models\\saved
+epochs: 1
+eval_setting: RO_RS
+load_col:
+  inter: [user_id, item_id, label, timestamp]
+  item: [item_id, category, subcategory, title]
+  kg: [head_id, relation_id, tail_id]
+  link: [item_id, entity_id]
+metrics: [Recall, MRR, NDCG, Hit, Precision]
+topk: 5  # We randomly sampled 1 million users who had at least 5 news click records
