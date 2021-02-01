@@ -7,6 +7,7 @@ data_path: models\\data
 checkpoint_dir: models\\saved
 epochs: 1
 eval_setting: RO_RS
+training_neg_sample_num: 0
 load_col:
   inter: [user_id, item_id, label, timestamp]
   item: [item_id, category, subcategory, title]

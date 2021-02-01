@@ -1,0 +1,121 @@
+Sun 31 Jan 2021 22:33:52 INFO General Hyper Parameters: 
+gpu_id=0
+use_gpu=True
+seed=5678
+state=DEBUG
+reproducibility=True
+data_path=models\\data\mind_small_dev
+show_progress=True
+
+Training Hyper Parameters: 
+checkpoint_dir=models\\saved
+epochs=1
+train_batch_size=2048
+learner=adam
+learning_rate=0.001
+training_neg_sample_num=0
+training_neg_sample_distribution=uniform
+eval_step=1
+stopping_step=10
+
+Evaluation Hyper Parameters: 
+eval_setting=RO_RS
+group_by_user=True
+split_ratio=[0.8, 0.1, 0.1]
+leave_one_num=2
+real_time_process=False
+metrics=['Recall', 'MRR', 'NDCG', 'Hit', 'Precision']
+topk=5
+valid_metric=MRR@10
+eval_batch_size=4096
+
+Dataset Hyper Parameters: 
+field_separator=	
+seq_separator= 
+USER_ID_FIELD=user_id
+ITEM_ID_FIELD=item_id
+RATING_FIELD=rating
+TIME_FIELD=timestamp
+seq_len=None
+LABEL_FIELD=label
+threshold=None
+NEG_PREFIX=neg_
+load_col={'inter': ['user_id', 'item_id', 'label', 'timestamp'], 'item': ['item_id', 'category', 'subcategory', 'title'], 'kg': ['head_id', 'relation_id', 'tail_id'], 'link': ['item_id', 'entity_id']}
+unload_col=None
+unused_col=None
+additional_feat_suffix=None
+lowest_val=None
+highest_val=None
+equal_val=None
+not_equal_val=None
+max_user_inter_num=None
+min_user_inter_num=0
+max_item_inter_num=None
+min_item_inter_num=0
+fields_in_same_space=None
+preload_weight=None
+normalize_field=None
+normalize_all=None
+ITEM_LIST_LENGTH_FIELD=item_length
+LIST_SUFFIX=_list
+MAX_ITEM_LIST_LENGTH=50
+POSITION_FIELD=position_id
+HEAD_ENTITY_ID_FIELD=head_id
+TAIL_ENTITY_ID_FIELD=tail_id
+RELATION_ID_FIELD=relation_id
+ENTITY_ID_FIELD=entity_id
+
+
+Sun 31 Jan 2021 22:33:52 DEBUG Loading <class 'recbole.data.dataset.dataset.Dataset'> from scratch
+Sun 31 Jan 2021 22:33:52 DEBUG uid_field: user_id
+Sun 31 Jan 2021 22:33:52 DEBUG iid_field: item_id
+Sun 31 Jan 2021 22:33:52 DEBUG Loading feature from [models\\data\mind_small_dev\mind_small_dev.inter] (source: [FeatureSource.INTERACTION]).
+Sun 31 Jan 2021 22:33:52 DEBUG [inter]: 
+Sun 31 Jan 2021 22:33:52 DEBUG 	 load_col: [{'user_id', 'item_id', 'label', 'timestamp'}]
+Sun 31 Jan 2021 22:33:52 DEBUG 	 unload_col: [None]
+Sun 31 Jan 2021 22:33:54 DEBUG Interaction feature loaded successfully from [models\\data\mind_small_dev\mind_small_dev.inter].
+Sun 31 Jan 2021 22:33:54 DEBUG Loading feature from [models\\data\mind_small_dev\mind_small_dev.user] (source: [FeatureSource.USER]).
+Sun 31 Jan 2021 22:33:54 DEBUG [user]: 
+Sun 31 Jan 2021 22:33:54 DEBUG 	 load_col: [set()]
+Sun 31 Jan 2021 22:33:54 DEBUG 	 unload_col: [None]
+Sun 31 Jan 2021 22:33:54 DEBUG [user] feature loaded successfully from [models\\data\mind_small_dev\mind_small_dev.user].
+Sun 31 Jan 2021 22:33:54 DEBUG Loading feature from [models\\data\mind_small_dev\mind_small_dev.item] (source: [FeatureSource.ITEM]).
+Sun 31 Jan 2021 22:33:54 DEBUG [item]: 
+Sun 31 Jan 2021 22:33:54 DEBUG 	 load_col: [{'category', 'item_id', 'title', 'subcategory'}]
+Sun 31 Jan 2021 22:33:54 DEBUG 	 unload_col: [None]
+Sun 31 Jan 2021 22:33:54 DEBUG [item] feature loaded successfully from [models\\data\mind_small_dev\mind_small_dev.item].
+Sun 31 Jan 2021 22:33:56 DEBUG get_illegal_ids_by_inter_num: field=[user_id], max_num=[None], min_num=[0]
+Sun 31 Jan 2021 22:33:56 DEBUG [0] illegal_ids_by_inter_num, field=[user_id]
+Sun 31 Jan 2021 22:33:56 DEBUG get_illegal_ids_by_inter_num: field=[item_id], max_num=[None], min_num=[0]
+Sun 31 Jan 2021 22:33:56 DEBUG [0] illegal_ids_by_inter_num, field=[item_id]
+Sun 31 Jan 2021 22:33:56 DEBUG fields_in_same_space: [{'user_id'}, {'item_id'}, {'category'}, {'subcategory'}, {'title'}]
+Sun 31 Jan 2021 22:33:58 DEBUG ordering item features by user id.
+Sun 31 Jan 2021 22:33:58 DEBUG Filling nan
+Sun 31 Jan 2021 22:33:59 INFO mind_small_dev
+The number of users: 50001
+Average actions of users: 54.81996
+The number of items: 42417
+Average actions of items: 510.5230024213075
+The number of inters: 2740998
+The sparsity of the dataset: 99.87076204440972%
+Remain Fields: ['user_id', 'item_id', 'label', 'timestamp', 'category', 'subcategory', 'title']
+Sun 31 Jan 2021 22:34:03 DEBUG split by ratios [[0.8, 0.1, 0.1]], group_by=[user_id]
+Sun 31 Jan 2021 22:34:09 INFO Build [ModelType.TRADITIONAL] DataLoader for [train] with format [InputType.POINTWISE]
+Sun 31 Jan 2021 22:34:09 INFO Evaluation Setting:
+	Group by user_id
+	Ordering: {'strategy': 'shuffle'}
+	Splitting: {'strategy': 'by_ratio', 'ratios': [0.8, 0.1, 0.1]}
+	No Negative Sampling
+Sun 31 Jan 2021 22:34:09 INFO batch_size = [[2048]], shuffle = [True]
+
+Sun 31 Jan 2021 22:34:09 INFO Build [ModelType.TRADITIONAL] DataLoader for [evaluation] with format [InputType.POINTWISE]
+Sun 31 Jan 2021 22:34:09 INFO Evaluation Setting:
+	Group by user_id
+	Ordering: {'strategy': 'shuffle'}
+	Splitting: {'strategy': 'by_ratio', 'ratios': [0.8, 0.1, 0.1]}
+	No Negative Sampling
+Sun 31 Jan 2021 22:34:09 INFO batch_size = [[4096, 4096]], shuffle = [False]
+
+Sun 31 Jan 2021 22:34:09 INFO Pop()
+Trainable parameters: 1
+Sun 31 Jan 2021 22:34:11 INFO epoch 0 training [time: 1.04s, train loss:0.0000]
