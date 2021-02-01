@@ -1,0 +1,8 @@
+dataset: mind_small_positive
+model: RippleNet
+seed: 5678
+state: DEBUG
+reproducibility: True
+data_path: data
+checkpoint_dir: saved
+epochs: 1

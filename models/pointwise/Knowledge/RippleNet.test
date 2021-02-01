@@ -1,3 +1,0 @@
-learning_rate choice [0.01, 0.005, 0.001, 0.0005, 0.0001]
-n_memory choice [4, 8, 16, 32]
-training_neg_sample_num choice [1, 2, 5, 10]
